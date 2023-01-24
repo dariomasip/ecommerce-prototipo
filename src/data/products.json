@@ -1,0 +1,22 @@
+[
+    {
+        "nombre": "Crest Padded Jacked",
+        "marca": "Black",
+        "precio": 80
+    },
+    {
+        "nombre": "Crest Joggers",
+        "marca": "Black",
+        "precio": 50
+    },
+    {
+        "nombre": "Crest Hoodie",
+        "marca": "Core Olive",
+        "precio": 50
+    },
+    {
+        "nombre": "Legacy Shorts",
+        "marca": "Black",
+        "precio": 50
+    }
+]
