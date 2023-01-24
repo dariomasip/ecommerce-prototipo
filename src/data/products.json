@@ -1,22 +1,30 @@
 [
     {
-        "nombre": "Crest Padded Jacked",
-        "marca": "Black",
-        "precio": 80
+        "id": 1,
+        "nombre": "Samsung Galaxy A31",
+        "marca": "Samsung",
+        "precio": 80,
+        "image": "/images/samsungzflip.webp"
     },
     {
-        "nombre": "Crest Joggers",
-        "marca": "Black",
-        "precio": 50
+        "id": 2,
+        "nombre": "Samsung Galaxy ZFlip",
+        "marca": "Samsung",
+        "precio": 50,
+        "image": "/images/samsungs22.webp"
+    },
+    {   
+        "id": 3,
+        "nombre": "Samsung Galaxy M10",
+        "marca": "Samsung",
+        "precio": 50,
+        "image": "/images/samsungzflip.webp"
     },
     {
-        "nombre": "Crest Hoodie",
-        "marca": "Core Olive",
-        "precio": 50
-    },
-    {
-        "nombre": "Legacy Shorts",
-        "marca": "Black",
-        "precio": 50
+        "id": 4,
+        "nombre": "Samsung Galaxy S22",
+        "marca": "Samsung",
+        "precio": 50,
+        "image": "/images/samsungzflip.webp"
     }
 ]

@@ -6,6 +6,7 @@ import styles from "@/styles/Home.module.css";
 import { CardItem } from "@/components/CardItem/CardItem";
 import dataJSON from "../data/products.json";
 import feedsJSON from "../data/feeds.json";
+import { Header } from "@/components/sections/Header/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,14 +25,17 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
+      <Header />
       {feedsJSON.map((item, key) => {
         return (
           <Feed>
             {dataJSON.map((item, key) => (
               <CardItem
+                id={item.id}
                 titulo={item.nombre}
                 marca={item.marca}
                 precio={item.precio}
+                image={item.image}
                 key={key}
               />
             ))}

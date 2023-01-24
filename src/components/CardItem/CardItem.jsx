@@ -1,12 +1,12 @@
-import { addToCart } from "@/helpers/addToCart";
+import ShoppingCart from "@/helpers/ShoppingCart";
 import styles from "./CardItem.module.css";
 
 
-const CardItem = ({titulo,marca,precio}) => {
+const CardItem = ({id,titulo,marca,precio,image}) => {
     return(
         <article className={styles.container}>
             <figure className={styles.container__figure}>
-                <img className={styles.container__figure__imagen} src="/images/product.webp" alt="" />
+                <img className={styles.container__figure__imagen} src={image} alt="" />
             </figure>
             <div className={styles.container__detail}>
                 <div>
@@ -17,7 +17,7 @@ const CardItem = ({titulo,marca,precio}) => {
                     <span className={styles.container__detail__price}>$ {precio} USD</span>
                 </div>
             </div>
-            <button onClick={() => addToCart({titulo, marca, precio})}>Añadir al carrito</button>
+            <button onClick={() => ShoppingCart.addItem({id,titulo, marca, precio})}>Añadir al carrito</button>
         </article>
     )
 }
