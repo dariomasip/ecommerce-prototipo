@@ -1,13 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./Header.module.css";
 
-const Header = () => {
-  const [shoppingCart, setShoppingCart] = useState();
-
-  useEffect(() => {
-    setShoppingCart(localStorage.getItem("shoppingCart"));
-  }, []);
-
+const Header = ({ shoppingCart }) => {
   return (
     <header className={styles.container}>
       <figure className={styles.container__logo}>
@@ -31,6 +25,9 @@ const Header = () => {
       <div className={styles.container__profile}>
         <img src="/images/iconos/search.svg" alt="Buscar" />
         <img src="/images/iconos/shopping_cart.svg" alt="Buscar" />
+        {shoppingCart?.length && (
+          <span className={styles.cantidadItems}>{shoppingCart.length}</span>
+        )}
         <img src="/images/iconos/account.svg" alt="Buscar" />
       </div>
     </header>

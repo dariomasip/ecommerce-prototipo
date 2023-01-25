@@ -7,10 +7,18 @@ import { CardItem } from "@/components/CardItem/CardItem";
 import dataJSON from "../data/products.json";
 import feedsJSON from "../data/feeds.json";
 import { Header } from "@/components/sections/Header/Header";
+import { useEffect, useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [shoppingCart, setShoppingCart] = useState([]);
+  console.log("🚀 ~ file: index.js:16 ~ Home ~ shoppingCart", shoppingCart);
+
+  useEffect(() => {
+    setShoppingCart(JSON.parse(localStorage.getItem("shoppingCart")));
+  }, []);
+
   return (
     <>
       <Head>
@@ -25,20 +33,33 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <Header />
+      <Header shoppingCart={shoppingCart} />
       {feedsJSON.map((item, key) => {
         return (
           <Feed>
-            {dataJSON.map((item, key) => (
-              <CardItem
-                id={item.id}
-                titulo={item.nombre}
-                marca={item.marca}
-                precio={item.precio}
-                image={item.image}
-                key={key}
-              />
-            ))}
+            {dataJSON.map((item, key) => {
+              let itemShoppingCart = [];
+
+              if (!(shoppingCart != null && shoppingCart.length)) {
+                itemShoppingCart = [];
+              } else {
+                itemShoppingCart = shoppingCart.filter((element) => {
+                  return element.id === item.id;
+                });
+              }
+
+              return (
+                <CardItem
+                  id={item.id}
+                  titulo={item.nombre}
+                  marca={item.marca}
+                  precio={item.precio}
+                  image={item.image}
+                  key={key}
+                  itemShoppingCart={itemShoppingCart}
+                />
+              );
+            })}
           </Feed>
         );
       })}
